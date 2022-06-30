@@ -83,7 +83,7 @@ app:isTextBold="true" // 是否粗字体，默认false
 ### 四、设置标签
 
 ```java
-labelsView = (LabelsView) findViewById(labels);
+labelView = (LabelView) findViewById(labels);
 ArrayList<String> label = new ArrayList<>();
 label.add("Android");
 label.add("IOS");
@@ -91,9 +91,9 @@ label.add("前端");
 label.add("后台");
 label.add("微信开发");
 label.add("游戏开发");
-labelsView.setLabels(label); //直接设置一个字符串数组就可以了。
+labelView.setLabels(label); //直接设置一个字符串数组就可以了。
 
-//LabelsView可以设置任何类型的数据，而不仅仅是String。
+//LabelView可以设置任何类型的数据，而不仅仅是String。
 ArrayList<TestBean> testList = new ArrayList<>();
 testList.add(new TestBean("Android",1));
 testList.add(new TestBean("IOS",2));
@@ -101,7 +101,7 @@ testList.add(new TestBean("前端",3));
 testList.add(new TestBean("后台",4));
 testList.add(new TestBean("微信开发",5));
 testList.add(new TestBean("游戏开发",6));
-labelsView.setLabels(testList, new LabelsView.LabelTextProvider<TestBean>() {
+labelView.setLabels(testList, new LabelView.LabelTextProvider<TestBean>() {
     @Override
     public CharSequence getLabelText(TextView label, int position, TestBean data) {
     
@@ -117,7 +117,7 @@ labelsView.setLabels(testList, new LabelsView.LabelTextProvider<TestBean>() {
 
 ```java
 //标签的点击监听
-labelsView.setOnLabelClickListener(new LabelsView.OnLabelClickListener() {
+labelView.setOnLabelClickListener(new LabelView.OnLabelClickListener() {
     @Override
     public void onLabelClick(TextView label, Object data, int position) {
          //label是被点击的标签，data是标签所对应的数据，position是标签的位置。
@@ -125,7 +125,7 @@ labelsView.setOnLabelClickListener(new LabelsView.OnLabelClickListener() {
 });
 
 // 标签的长按监听
-labelsView.setOnLabelLongClickListener(new LabelsView.OnLabelLongClickListener() {
+labelView.setOnLabelLongClickListener(new LabelView.OnLabelLongClickListener() {
     @Override
     public boolean onLabelLongClick(TextView label, Object data, int position) {
         return false;
@@ -133,7 +133,7 @@ labelsView.setOnLabelLongClickListener(new LabelsView.OnLabelLongClickListener()
 });
 
 //标签的选中监听
-labelsView.setOnLabelSelectChangeListener(new LabelsView.OnLabelSelectChangeListener() {
+labelView.setOnLabelSelectChangeListener(new LabelView.OnLabelSelectChangeListener() {
     @Override
     public void onLabelSelectChange(TextView label, Object data, boolean isSelect, int position) {
         //label是被选中的标签，data是标签所对应的数据，isSelect是是否选中，position是标签的位置。
@@ -147,7 +147,7 @@ labelsView.setOnLabelSelectChangeListener(new LabelsView.OnLabelSelectChangeList
 
 ```java
 //设置标签选中状态的点击改变拦截器
-labelsView.setOnSelectChangeIntercept(new LabelsView.OnSelectChangeIntercept() {
+labelView.setOnSelectChangeIntercept(new LabelView.OnSelectChangeIntercept() {
     @Override
     public boolean onIntercept(TextView label, Object data, boolean oldSelect, boolean newSelect, int position) {
         if (position == 0){
@@ -165,7 +165,7 @@ labelsView.setOnSelectChangeIntercept(new LabelsView.OnSelectChangeIntercept() {
 ```java
 //设置选中标签。
 //positions是个可变类型，表示被选中的标签的位置。
-//比喻labelsView.setSelects(1,2,5);选中第1,3,5个标签。如果是单选的话，只有第一个参数有效。
+//比如labelView.setSelects(1,2,5);选中第1,3,5个标签。如果是单选的话，只有第一个参数有效。
 public void setSelects(int... positions);
 public void setSelects(List<Integer> positions)；
 
