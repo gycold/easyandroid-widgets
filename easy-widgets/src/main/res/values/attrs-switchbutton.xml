@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <declare-styleable name="SwitchButton" tools:ignore="ResourceName">
+        <attr name="swThumbDrawable" format="reference"/>
+        <attr name="swThumbColor" format="color|reference"/>
+        <attr name="swThumbMargin" format="dimension|reference"/>
+        <attr name="swThumbMarginTop" format="dimension|reference"/>
+        <attr name="swThumbMarginBottom" format="dimension|reference"/>
+        <attr name="swThumbMarginLeft" format="dimension|reference"/>
+        <attr name="swThumbMarginRight" format="dimension|reference"/>
+        <attr name="swThumbWidth" format="dimension|reference"/>
+        <attr name="swThumbHeight" format="dimension|reference"/>
+        <attr name="swThumbRadius" format="dimension|reference"/>
+        <attr name="swBackRadius" format="dimension|reference"/>
+        <attr name="swBackDrawable" format="reference"/>
+        <attr name="swBackColor" format="color|reference"/>
+        <attr name="swFadeBack" format="boolean"/>
+        <attr name="swThumbRangeRatio" format="float"/>
+        <attr name="swAnimationDuration" format="integer"/>
+        <attr name="swTintColor" format="color|reference"/>
+        <attr name="swTextOn" format="string"/>
+        <attr name="swTextOff" format="string"/>
+        <attr name="swTextThumbInset" format="dimension"/>
+        <attr name="swTextExtra" format="dimension"/>
+        <attr name="swTextAdjust" format="dimension"/>
+    </declare-styleable>
+
+</resources>

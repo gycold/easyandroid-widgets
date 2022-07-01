@@ -1,3 +1,6 @@
+## CircleImageView
+
+圆形图片
 
 ### 用法：
 ```

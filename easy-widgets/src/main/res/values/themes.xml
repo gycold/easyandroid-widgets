@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="SwitchButtonMD" tools:ignore="ResourceName">
+        <item name="swThumbDrawable">@drawable/sw_thumb</item>
+        <item name="swBackColor">@color/sw_back_color</item>
+        <item name="swThumbRangeRatio">1.45</item>
+        <item name="swThumbMarginLeft">-16dp</item>
+        <item name="swThumbMarginTop">-14dp</item>
+        <item name="swThumbMarginRight">-16dp</item>
+        <item name="swThumbMarginBottom">-14dp</item>
+        <item name="swThumbWidth">@dimen/sw_thumb_ripple_size</item>
+        <item name="swThumbHeight">@dimen/sw_thumb_ripple_size</item>
+    </style>
+
+</resources>
