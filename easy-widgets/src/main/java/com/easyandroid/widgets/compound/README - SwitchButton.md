@@ -1,6 +1,7 @@
 ## SwitchButton
 
-
+开关按钮
+![开关按钮](demo_preview.png)
 
 ### 属性介绍：
 
