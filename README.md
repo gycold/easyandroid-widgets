@@ -21,12 +21,12 @@ many android useful widget sets
 
 ## TextView、形状相关
 1. `ShapeXXX`
-[README - ShapeView.md](https://github.com/gycold/easyandroid-widgets/blob/master/easy-widgets/src/main/java/com/easyandroid/widgets/textview/README-ShapeView.md)
+[README - ShapeView.md](https://github.com/gycold/easyandroid-widgets/blob/master/easy-widgets/src/main/java/com/easyandroid/widgets/textview/README%20-%20ShapeView.md)
 
 -----
 
 ## Compound相关
 1. `SwitchButton`
-[README - SwitchButton.md](https://github.com/gycold/easyandroid-widgets/blob/master/easy-widgets/src/main/java/com/easyandroid/widgets/compound/README - SwitchButton.md)
+[README - SwitchButton.md](https://github.com/gycold/easyandroid-widgets/blob/master/easy-widgets/src/main/java/com/easyandroid/widgets/compound/README%20-%20SwitchButton.md)
 
 
