@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="EasyEditText">
+        <attr name="e_separator" format="string" />
+        <attr name="e_pattern" format="string" />
+        <attr name="e_clearDrawable" format="reference" />
+        <attr name="e_showPwdDrawable" format="reference" />
+        <attr name="e_hidePwdDrawable" format="reference" />
+        <attr name="e_clearDrawableTint" format="color|reference" />
+        <attr name="e_togglePwdDrawableTint" format="color|reference" />
+        <attr name="e_interactionPadding" format="dimension|reference" />
+        <attr name="e_disableClear" format="boolean" />
+        <attr name="e_togglePwdDrawableEnable" format="boolean" />
+        <attr name="e_disableEmoji" format="boolean" />
+    </declare-styleable>
+</resources>
