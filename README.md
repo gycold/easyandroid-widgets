@@ -27,6 +27,6 @@ many android useful widget sets
 
 ## Compound相关
 1. `SwitchButton`
-[README - SwitchButton.md](https://github.com/gycold/easyandroid-widgets/blob/master/easy-widgets/src/main/java/com/easyandroid/widgets/compound/README-SwitchButton.md)
+[README - SwitchButton.md](https://github.com/gycold/easyandroid-widgets/blob/master/easy-widgets/src/main/java/com/easyandroid/widgets/compound/README - SwitchButton.md)
 
 
