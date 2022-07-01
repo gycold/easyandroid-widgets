@@ -34,3 +34,10 @@ many android useful widget sets
 ## Line相关
 1. `DashLine`
 [README - DashLine.md](https://github.com/gycold/easyandroid-widgets/blob/master/easy-widgets/src/main/java/com/easyandroid/widgets/line/README%20-%20DashLine.md)
+
+-----
+
+## EditText相关
+1. `EasyEditText`
+[README - EasyEditText.md](https://github.com/gycold/easyandroid-widgets/blob/master/easy-widgets/src/main/java/com/easyandroid/widgets/edittext/README%20-%20EasyEditText.md)
+
