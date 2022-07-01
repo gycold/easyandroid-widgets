@@ -2,7 +2,7 @@
 
 Android流式布局，当一行没有足够的空间时，它可以动态计算子视图之间的间距，从而实现每行均匀放置。
 
-![](FlowLayout.png)
+![FlowLayout](FlowLayout.png)
 
 ### 说明
 

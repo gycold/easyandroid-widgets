@@ -29,4 +29,8 @@ many android useful widget sets
 1. `SwitchButton`
 [README - SwitchButton.md](https://github.com/gycold/easyandroid-widgets/blob/master/easy-widgets/src/main/java/com/easyandroid/widgets/compound/README%20-%20SwitchButton.md)
 
+-----
 
+## Line相关
+1. `DashLine`
+[README - DashLine.md](https://github.com/gycold/easyandroid-widgets/blob/master/easy-widgets/src/main/java/com/easyandroid/widgets/line/README%20-%20DashLine.md)
