@@ -1,13 +1,12 @@
 <resources>
-
-    <!--LabelView-->
-    <item name="tag_key_data" type="id"/>
-    <item name="tag_key_position" type="id"/>
-
-
     <!--LinkedTextView-->
     <string name="linked_contract">收起</string>
     <string name="linked_expend">展开</string>
     <string name="linked_text_target">网页链接</string>
+
+    <!--EasyDialog-->
+    <string name="easy_dialog_empty_data">空数据</string>
+    <string name="easy_dialog_error">发生错误，点击屏幕重试</string>
+    <string name="easy_dialog_error_reload">点击屏幕重试</string>
 
 </resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--LabelView-->
+    <item name="tag_key_data" type="id"/>
+    <item name="tag_key_position" type="id"/>
+
+    <!--EasyDialog-->
+    <item name="btn_ok" type="id" />
+    <item name="btn_cancel" type="id" />
+    <item name="dialog_title" type="id" />
+    <item name="dialog_content" type="id" />
+
+    <item name="dialog_loading_layout_id" type="id" />
+    <item name="dialog_empty_layout_id" type="id" />
+    <item name="dialog_error_layout_id" type="id" />
+    <item name="dialog_empty_tv_id" type="id" />
+    <item name="dialog_error_tv_id" type="id" />
+</resources>

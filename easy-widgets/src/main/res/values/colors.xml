@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!--common-->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <!--SwitchButton-->
     <color name="sw_ripple_normal">#1E000000</color>
     <color name="sw_ripple_checked">#33019285</color>
-
     <color name="sw_solid_shadow">#33000000</color>
-
     <color name="sw_solid_normal">#ECECEC</color>
     <color name="sw_solid_checked">#019285</color>
     <color name="sw_solid_disable">#FFFFFF</color>
     <color name="sw_solid_checked_disable">#aaaaaa</color>
+
+    <!--EasyDialog-->
+    <color name="c333333">#333333</color>
+
+
 </resources>

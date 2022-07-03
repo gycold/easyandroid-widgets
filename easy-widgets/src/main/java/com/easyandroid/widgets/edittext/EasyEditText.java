@@ -115,17 +115,17 @@ public class EasyEditText extends AppCompatEditText {
 
         mSeparator = a.getString(R.styleable.EasyEditText_e_separator);
         disableClear = a.getBoolean(R.styleable.EasyEditText_e_disableClear, false);
-        mClearResId = a.getResourceId(R.styleable.EasyEditText_e_clearDrawable, R.drawable.e_et_svg_ic_clear_24dp);
+        mClearResId = a.getResourceId(R.styleable.EasyEditText_e_clearDrawable, R.drawable.easyedittext_et_svg_ic_clear_24dp);
         togglePwdDrawableEnable = a.getBoolean(R.styleable.EasyEditText_e_togglePwdDrawableEnable, true);
-        mShowPwdResId = a.getResourceId(R.styleable.EasyEditText_e_showPwdDrawable, R.drawable.e_et_svg_ic_show_password_24dp);
-        mHidePwdResId = a.getResourceId(R.styleable.EasyEditText_e_hidePwdDrawable, R.drawable.e_et_svg_ic_hide_password_24dp);
+        mShowPwdResId = a.getResourceId(R.styleable.EasyEditText_e_showPwdDrawable, R.drawable.easyedittext_et_svg_ic_show_password_24dp);
+        mHidePwdResId = a.getResourceId(R.styleable.EasyEditText_e_hidePwdDrawable, R.drawable.easyedittext_et_svg_ic_hide_password_24dp);
         if (a.hasValue(R.styleable.EasyEditText_e_clearDrawableTint)) {
             mClearDrawableTint = a.getColorStateList(R.styleable.EasyEditText_e_clearDrawableTint);
         } else {
             mClearDrawableTint = ColorStateList.valueOf(getCurrentHintTextColor());
         }
-        if (mShowPwdResId == R.drawable.e_et_svg_ic_show_password_24dp &&
-                mHidePwdResId == R.drawable.e_et_svg_ic_hide_password_24dp) {
+        if (mShowPwdResId == R.drawable.easyedittext_et_svg_ic_show_password_24dp &&
+                mHidePwdResId == R.drawable.easyedittext_et_svg_ic_hide_password_24dp) {
             // didn't customize toggle pwd drawables
             if (a.hasValue(R.styleable.EasyEditText_e_togglePwdDrawableTint)) {
                 mTogglePwdDrawableTint = a.getColorStateList(R.styleable.EasyEditText_e_togglePwdDrawableTint);

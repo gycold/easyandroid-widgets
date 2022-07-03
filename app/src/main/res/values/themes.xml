@@ -29,4 +29,12 @@
         <item name="overlapAnchor">false</item>
     </style>
 
+    <style name="customloadingProgressStyle">
+        <item name="android:indeterminateDrawable">@drawable/loading_frame_translate
+        </item>
+        <item name="android:minWidth">61dp</item>
+        <item name="android:maxWidth">61dp</item>
+        <item name="android:minHeight">61dp</item>
+        <item name="android:maxHeight">61dp</item>
+    </style>
 </resources>

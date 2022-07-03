@@ -1,7 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
+    <!--SwitchButton-->
     <style name="SwitchButtonMD" tools:ignore="ResourceName">
-        <item name="swThumbDrawable">@drawable/sw_thumb</item>
+        <item name="swThumbDrawable">@drawable/switchbutton_sw_thumb</item>
         <item name="swBackColor">@color/sw_back_color</item>
         <item name="swThumbRangeRatio">1.45</item>
         <item name="swThumbMarginLeft">-16dp</item>
@@ -10,6 +11,17 @@
         <item name="swThumbMarginBottom">-14dp</item>
         <item name="swThumbWidth">@dimen/sw_thumb_ripple_size</item>
         <item name="swThumbHeight">@dimen/sw_thumb_ripple_size</item>
+    </style>
+
+    <!--EasyDialog-->
+    <style name="translate_style" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/view_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/view_fade_out</item>
+    </style>
+
+    <style name="AnimUp" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
     </style>
 
 </resources>

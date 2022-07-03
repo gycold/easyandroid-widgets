@@ -176,7 +176,7 @@ public class LabelView extends ViewGroup implements View.OnClickListener, View.O
                     mLabelBg = new ColorDrawable(labelBgColor);
                 }
             } else {
-                mLabelBg = getResources().getDrawable(R.drawable.default_label_bg);
+                mLabelBg = getResources().getDrawable(R.drawable.labelview_default_label_bg);
             }
 
             isSingleLine = mTypedArray.getBoolean(R.styleable.LabelsView_singleLine, false);
