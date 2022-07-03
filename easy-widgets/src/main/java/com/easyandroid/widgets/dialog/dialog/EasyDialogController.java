@@ -14,6 +14,7 @@ import com.easyandroid.widgets.ScreenUtil;
 
 import java.lang.ref.WeakReference;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentManager;
 
 /**
@@ -40,6 +41,9 @@ public class EasyDialogController {
     private String contentStr;//默认内容
     private String positiveStr;//右边按钮文字
     private String negativeStr;//左边按钮文字
+    int positiveTextColorId;//右边按钮文字颜色资源id
+    int negativeTextColorId;//左边按钮文字颜色资源id
+
     private boolean showBtnLeft, showBtnRight;
 
     private Button btn_ok, btn_cancel;
@@ -95,11 +99,11 @@ public class EasyDialogController {
     public void setChildView(View view) {
         setDialogView(view);
         dealDefaultDialog(mPositiveButtonListener, mNegativeButtonListener, titleStr,
-                contentStr, showBtnLeft, negativeStr, showBtnRight, positiveStr);
+                contentStr, showBtnLeft, negativeStr, showBtnRight, positiveStr, positiveTextColorId, negativeTextColorId);
     }
 
     private void dealDefaultDialog(IDialog.OnClickListener positiveBtnListener, IDialog.OnClickListener negativeBtnListener, final String titleStr, final String contentStr,
-                                   boolean showBtnLeft, String negativeStr, boolean showBtnRight, String positiveStr) {
+                                   boolean showBtnLeft, String negativeStr, boolean showBtnRight, String positiveStr, int positiveTextColorId, int negativeTextColorId) {
         if (dialogView == null) return;
         this.mNegativeButtonListener = negativeBtnListener;
         this.mPositiveButtonListener = positiveBtnListener;
@@ -111,11 +115,13 @@ public class EasyDialogController {
             if (btn_ok != null) {
                 btn_ok.setVisibility(View.VISIBLE);
                 btn_ok.setText(Html.fromHtml(TextUtils.isEmpty(positiveStr) ? "确定" : positiveStr));
+                btn_ok.setTextColor(ContextCompat.getColor(btn_ok.getContext(), positiveTextColorId));
                 btn_ok.setOnClickListener(mButtonHandler);
             }
             if (btn_cancel != null) {
                 btn_cancel.setVisibility(View.VISIBLE);
                 btn_cancel.setText(Html.fromHtml(TextUtils.isEmpty(negativeStr) ? "取消" : negativeStr));
+                btn_cancel.setTextColor(ContextCompat.getColor(btn_cancel.getContext(), negativeTextColorId));
                 btn_cancel.setOnClickListener(mButtonHandler);
             }
         } else if (showBtnRight) {
@@ -137,7 +143,7 @@ public class EasyDialogController {
         }
 
         TextView tv_title = dialogView.findViewById(R.id.dialog_title);
-        final TextView tv_content = dialogView.findViewById(R.id.dialog_content);
+        final TextView tv_content = dialogView.findViewById(R.id.tv_dialog_content);
 
         if (tv_title != null) {
             tv_title.setVisibility(TextUtils.isEmpty(titleStr) ? View.GONE : View.VISIBLE);
@@ -216,8 +222,11 @@ public class EasyDialogController {
         String contentStr;//默认内容
         String positiveStr;//右边按钮文字
         String negativeStr;//左边按钮文字
+        int positiveTextColorId;//右边按钮文字颜色资源id
+        int negativeTextColorId;//左边按钮文字颜色资源id
+
         boolean showBtnLeft, showBtnRight;
-//        int animRes = R.style.translate_style;//Dialog动画style
+        //        int animRes = R.style.translate_style;//Dialog动画style
         int animRes = 0;//Dialog动画style，默认0不加动画
 
         void apply(EasyDialogController controller) {
@@ -230,6 +239,9 @@ public class EasyDialogController {
             controller.contentStr = contentStr;
             controller.positiveStr = positiveStr;
             controller.negativeStr = negativeStr;
+            controller.positiveTextColorId = positiveTextColorId;
+            controller.negativeTextColorId = negativeTextColorId;
+
             controller.showBtnLeft = showBtnLeft;
             controller.showBtnRight = showBtnRight;
             controller.mPositiveButtonListener = positiveBtnListener;

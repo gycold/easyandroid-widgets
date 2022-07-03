@@ -9,8 +9,8 @@
     android:background="@android:color/transparent">
 
     <LinearLayout
-        android:id="@+id/layout_content"
-        android:layout_width="fill_parent"
+        android:id="@+id/ll_content_top"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:background="@drawable/easydialog_lib_ui_roundlayout"
@@ -18,8 +18,8 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:id="@+id/layout_havemsg"
-            android:layout_width="fill_parent"
+            android:id="@+id/ll_havemsg"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingLeft="15dp"
@@ -27,7 +27,7 @@
 
             <TextView
                 android:id="@id/dialog_title"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:lineSpacingExtra="6dp"
@@ -38,8 +38,8 @@
                 tools:text="订单提交成功" />
 
             <TextView
-                android:id="@id/dialog_content"
-                android:layout_width="fill_parent"
+                android:id="@id/tv_dialog_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
@@ -51,8 +51,8 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/txt_onlytitle"
-            android:layout_width="fill_parent"
+            android:id="@+id/tv_onlytitle"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:lineSpacingExtra="6dp"
@@ -60,41 +60,41 @@
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:textColor="#292d33"
-            android:textSize="17sp"
+            android:textSize="16sp"
             android:visibility="gone"
             tools:text="订单提交成功" />
 
         <!--下面的button-->
         <LinearLayout
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <Button
                 android:id="@id/btn_cancel"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/easydialog_selector_btn_cancel_border_bg"
                 android:gravity="center"
                 android:minHeight="44dp"
                 android:text="取消"
-                android:textColor="#f7595a"
-                android:textSize="17sp"
+                android:textColor="#333333"
+                android:textSize="16sp"
                 android:visibility="gone"
                 tools:visibility="visible" />
 
             <Button
                 android:id="@id/btn_ok"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/easydialog_selector_btn_assuere_border_bg"
                 android:gravity="center"
                 android:minHeight="44dp"
                 android:text="确定"
-                android:textColor="#f7595a"
-                android:textSize="17sp"
+                android:textColor="#333333"
+                android:textSize="16sp"
                 android:visibility="gone"
                 tools:visibility="visible" />
         </LinearLayout>

@@ -9,7 +9,7 @@
     <item name="btn_ok" type="id" />
     <item name="btn_cancel" type="id" />
     <item name="dialog_title" type="id" />
-    <item name="dialog_content" type="id" />
+    <item name="tv_dialog_content" type="id" />
 
     <item name="dialog_loading_layout_id" type="id" />
     <item name="dialog_empty_layout_id" type="id" />

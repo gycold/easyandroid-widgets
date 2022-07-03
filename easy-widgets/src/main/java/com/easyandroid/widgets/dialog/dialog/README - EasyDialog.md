@@ -77,7 +77,28 @@
               }).show();
 ```
 
-4. **底部pop示例：**
+4. **按钮设置颜色**
+```java
+new EasyDialog.Builder(this)
+           .setTitle("我是标题")
+          .setContent("您好,我们将在30分钟处理，稍后通知您订单结果！")
+          .setPositiveButton("确定", R.color.grey, new IDialog.OnClickListener() {
+               @Override
+               public void onClick(IDialog dialog) {
+                   dialog.dismiss();
+               }
+           })
+          .setNegativeButton("取消", R.color.grey, new IDialog.OnClickListener() {
+               @Override
+               public void onClick(IDialog dialog) {
+                   dialog.dismiss();
+               }
+            })
+           .show();
+```
+
+
+5. **底部pop示例：**
 ```java
     new EasyDialog.Builder(this)
             .setDialogView(R.layout.layout_share)

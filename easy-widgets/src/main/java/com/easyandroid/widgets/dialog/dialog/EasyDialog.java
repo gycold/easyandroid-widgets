@@ -342,6 +342,20 @@ public class EasyDialog extends EasyBaseDialog implements IDialog {
         }
 
         /**
+         * 设置默认右侧点击按钮及文字、文字颜色
+         *
+         * @param onclickListener IDialog.OnClickListener
+         * @return Builder
+         */
+        public Builder setPositiveButton(String btnStr, int colorId, IDialog.OnClickListener onclickListener) {
+            params.positiveBtnListener = onclickListener;
+            params.positiveStr = btnStr;
+            params.positiveTextColorId = colorId;
+            params.showBtnRight = true;
+            return this;
+        }
+
+        /**
          * 设置左侧按钮
          *
          * @param onclickListener IDialog.OnClickListener
@@ -361,6 +375,21 @@ public class EasyDialog extends EasyBaseDialog implements IDialog {
         public Builder setNegativeButton(String btnStr, IDialog.OnClickListener onclickListener) {
             params.negativeBtnListener = onclickListener;
             params.negativeStr = btnStr;
+            params.showBtnLeft = true;
+            return this;
+        }
+
+        /**
+         * 设置左侧文字及按钮、按钮颜色
+         *
+         * @param btnStr          文字
+         * @param onclickListener IDialog.OnClickListener
+         * @return Builder
+         */
+        public Builder setNegativeButton(String btnStr, int colorId, IDialog.OnClickListener onclickListener) {
+            params.negativeBtnListener = onclickListener;
+            params.negativeStr = btnStr;
+            params.negativeTextColorId = colorId;
             params.showBtnLeft = true;
             return this;
         }
