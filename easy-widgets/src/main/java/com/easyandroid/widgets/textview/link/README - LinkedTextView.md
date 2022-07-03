@@ -260,7 +260,7 @@
 
 ### Java
 ```java
-/**
+        /**
         *   正常的使用
         */
         LinkedTextView linkedTextView = findViewById(R.id.ltv_01);
