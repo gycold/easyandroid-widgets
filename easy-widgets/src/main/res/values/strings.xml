@@ -1,4 +1,13 @@
 <resources>
+
+    <!--LabelView-->
     <item name="tag_key_data" type="id"/>
     <item name="tag_key_position" type="id"/>
+
+
+    <!--LinkedTextView-->
+    <string name="linked_contract">收起</string>
+    <string name="linked_expend">展开</string>
+    <string name="linked_text_target">网页链接</string>
+
 </resources>
