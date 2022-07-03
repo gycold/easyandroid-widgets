@@ -29,6 +29,20 @@
         <item name="overlapAnchor">false</item>
     </style>
 
+    <style name="btn_style_parent">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="btn_style_done_new" parent="@style/btn_style_parent">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/btn_selector_done</item>
+        <item name="android:layout_marginLeft">30dp</item>
+        <item name="android:layout_marginRight">30dp</item>
+    </style>
+
     <style name="customloadingProgressStyle">
         <item name="android:indeterminateDrawable">@drawable/loading_frame_translate
         </item>

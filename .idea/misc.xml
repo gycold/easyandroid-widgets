@@ -3,13 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/app/src/main/res/drawable/btn_selector_done.xml" value="0.218" />
+        <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/app/src/main/res/drawable/popup_sys_circle_bg.xml" value="0.218" />
         <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/app/src/main/res/drawable/toast_bg.xml" value="0.2175" />
         <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/app/src/main/res/layout/activity_main.xml" value="0.24114583333333334" />
         <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/app/src/main/res/layout/activity_notification.xml" value="0.4" />
+        <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/app/src/main/res/layout/activity_window_manager.xml" value="0.24114583333333334" />
         <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/app/src/main/res/layout/layout_notification.xml" value="0.4897959183673469" />
         <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/app/src/main/res/layout/layout_toolbar.xml" value="0.24114583333333334" />
         <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/app/src/main/res/layout/loading_dialog.xml" value="0.24114583333333334" />
+        <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/app/src/main/res/layout/m_toolbar.xml" value="0.24114583333333334" />
         <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/app/src/main/res/menu/menu_toolbar.xml" value="0.24114583333333334" />
+        <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/app/src/main/res/menu/toolbar_right.xml" value="0.24114583333333334" />
         <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/easy-widgets/src/main/res/drawable/btn_assuere_border_bg_nol.xml" value="0.2075" />
         <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/easy-widgets/src/main/res/drawable/default_label_bg.xml" value="0.2025" />
         <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/easy-widgets/src/main/res/drawable/easydialog_lib_ui_roundlayout.xml" value="0.1645" />
