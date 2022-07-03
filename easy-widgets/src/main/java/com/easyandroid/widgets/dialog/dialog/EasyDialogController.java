@@ -142,7 +142,7 @@ public class EasyDialogController {
             }
         }
 
-        TextView tv_title = dialogView.findViewById(R.id.dialog_title);
+        TextView tv_title = dialogView.findViewById(R.id.tv_dialog_title);
         final TextView tv_content = dialogView.findViewById(R.id.tv_dialog_content);
 
         if (tv_title != null) {

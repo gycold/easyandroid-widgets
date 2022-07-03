@@ -2,7 +2,7 @@
 many android useful widget sets
 旨在归纳最常见、最常用视图，持续更新中...
 
-## ImageView相关
+## 一、ImageView相关
 1. `CircleImageView`
 [README - CircleImageView.md](https://github.com/gycold/easyandroid-widgets/blob/master/easy-widgets/src/main/java/com/easyandroid/widgets/imageview/README%20-%20CircleImageView.md)
 
@@ -10,7 +10,7 @@ many android useful widget sets
 
 -----
 
-## 标签相关
+## 二、标签相关
 1. `FlowLayout`
 [README - FlowLayout.md](https://github.com/gycold/easyandroid-widgets/blob/master/easy-widgets/src/main/java/com/easyandroid/widgets/label/README%20-%20FlowLayout.md)
 
@@ -19,7 +19,7 @@ many android useful widget sets
 
 -----
 
-## TextView、形状相关
+## 三、TextView、形状相关
 1. `ShapeXXX`
 [README - ShapeView.md](https://github.com/gycold/easyandroid-widgets/blob/master/easy-widgets/src/main/java/com/easyandroid/widgets/textview/README%20-%20ShapeView.md)
 2. `LinkedTextView`
@@ -27,19 +27,24 @@ many android useful widget sets
 
 -----
 
-## Compound相关
+## 四、Compound相关
 1. `SwitchButton`
 [README - SwitchButton.md](https://github.com/gycold/easyandroid-widgets/blob/master/easy-widgets/src/main/java/com/easyandroid/widgets/compound/README%20-%20SwitchButton.md)
 
 -----
 
-## Line相关
+## 五、Line相关
 1. `DashLine`
 [README - DashLine.md](https://github.com/gycold/easyandroid-widgets/blob/master/easy-widgets/src/main/java/com/easyandroid/widgets/line/README%20-%20DashLine.md)
 
 -----
 
-## EditText相关
+## 六、EditText相关
 1. `EasyEditText`
 [README - EasyEditText.md](https://github.com/gycold/easyandroid-widgets/blob/master/easy-widgets/src/main/java/com/easyandroid/widgets/edittext/README%20-%20EasyEditText.md)
 
+-----
+
+## 七、Dialog相关
+1. `EasyDialog`
+[README - EasyDialog.md](https://github.com/gycold/easyandroid-widgets/blob/master/easy-widgets/src/main/java/com/easyandroid/widgets/dialog/dialog/README%20-%20EasyDialog.md)

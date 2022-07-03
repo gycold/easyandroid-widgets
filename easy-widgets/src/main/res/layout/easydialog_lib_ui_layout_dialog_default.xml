@@ -26,12 +26,12 @@
             android:paddingRight="15dp">
 
             <TextView
-                android:id="@id/dialog_title"
+                android:id="@id/tv_dialog_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
                 android:lineSpacingExtra="6dp"
-                android:paddingTop="15dp"
                 android:textColor="#333333"
                 android:textSize="18sp"
                 android:visibility="visible"
@@ -43,9 +43,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
-                android:gravity="center"
+                android:gravity="left"
                 android:lineSpacingExtra="6dp"
-                android:textColor="#666666"
+                android:textColor="#333333"
                 android:textSize="16sp"
                 tools:text="我们将在30分钟处理，稍后通知您订单结果！感谢您选择" />
         </LinearLayout>
@@ -79,7 +79,7 @@
                 android:gravity="center"
                 android:minHeight="44dp"
                 android:text="取消"
-                android:textColor="#333333"
+                android:textColor="#666666"
                 android:textSize="16sp"
                 android:visibility="gone"
                 tools:visibility="visible" />
