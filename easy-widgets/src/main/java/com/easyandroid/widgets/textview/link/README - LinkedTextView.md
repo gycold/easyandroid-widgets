@@ -201,3 +201,111 @@
 ```
 
 
+
+### 属性说明：
+```xml
+<!--保留的行数-->
+<attr name="ltv_max_line" format="integer" />
+
+<!--是否需要展开-->
+<attr name="ltv_need_expand" format="boolean" />
+
+<!--是否需要收起 这个是建立在开启展开的基础上的-->
+<attr name="ltv_need_contract" format="boolean" />
+
+<!--是否需要@用户 -->
+<attr name="ltv_need_mention" format="boolean" />
+
+<!--是否需要对链接进行处理 -->
+<attr name="ltv_need_link" format="boolean" />
+
+<!--是否需要动画-->
+<attr name="ltv_need_animation" format="boolean" />
+
+<!--是否需要将连接转换成网页链接显示 默认为true-->
+<attr name="ltv_need_convert_url" format="boolean" />
+
+<!--是否需要自定义规则-->
+<attr name="ltv_need_self" format="boolean" />
+
+<!--收起的文案-->
+<attr name="ltv_contract_text" format="string" />
+
+<!--展开的文案-->
+<attr name="ltv_expand_text" format="string" />
+
+<!--展开的文字的颜色-->
+<attr name="ltv_expand_color" format="color" />
+
+<!--收起的文字的颜色-->
+<attr name="ltv_contract_color" format="color" />
+
+<!--链接的文字的颜色-->
+<attr name="ltv_link_color" format="color" />
+
+<!--@用户的文字的颜色-->
+<attr name="ltv_mention_color" format="color" />
+
+<!--自定义规则的文字的颜色-->
+<attr name="ltv_self_color" format="color" />
+
+<!--链接的图标-->
+<attr name="ltv_link_res" format="reference"/>
+
+<!--是否需要永远将展开或者收回放置在最后边-->
+<attr name="ltv_need_always_showright" format="boolean" />
+```
+
+
+
+### Java
+```java
+/**
+        *   正常的使用
+        */
+        LinkedTextView linkedTextView = findViewById(R.id.ltv_01);
+        //需要显示的内容
+        String yourText = "  我所认识的中国，强大、友好。@奥特曼 “一带一路”经济带带动了沿线国家的经济发展，促进我国与他国的友好往来和贸易发展，可谓“双赢”。http://www.baidu.com 自古以来，中国以和平、友好的面孔示人。汉武帝派张骞出使西域，开辟丝绸之路，增进与西域各国的友好往来。http://www.baidu.com 胡麻、胡豆、香料等食材也随之传入中国，汇集于中华美食。@RNG 漠漠古道，驼铃阵阵，这条路奠定了“一带一路”的基础，让世界认识了中国。";
+        //将内容设置给控件
+        linkedTextView.setContent(yourText);
+        //xml中的属性也可以通过代码设置 比如
+        linkedTextView.setmNeedExpend(true);
+        //还有很多。。。。
+        //添加点击监听
+        linkedTextView.setLinkClickListener(new LinkedTextView.OnLinkClickListener() {
+            @Override
+            public void onLinkClickListener(LinkType linkType, String content,String selfContent) {
+                //根据类型去判断
+                if (type.equals(LinkType.LINK_TYPE)) {
+                    Toast.makeText(MainActivity.this, "你点击了链接 内容是：" + content, Toast.LENGTH_SHORT).show();
+                } else if (type.equals(LinkType.MENTION_TYPE)) {
+                    Toast.makeText(MainActivity.this, "你点击了@用户 内容是：" + content, Toast.LENGTH_SHORT).show();
+                } else if (type.equals(LinkType.SELF)) {
+                    Toast.makeText(MainActivity.this, "你点击了自定义规则 内容是：" + content + " " + selfContent, Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        //添加展开和收回操作
+        linkedTextView.setExpandOrContractClickListener(type -> {
+            if (type.equals(StatusType.STATUS_CONTRACT)) {
+                Toast.makeText(MainActivity.this, "收回操作", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(MainActivity.this, "展开操作", Toast.LENGTH_SHORT).show();
+            }
+        });
+				//监听是否初始化完成 在这里可以获取是否支持展开/收回
+        linkedTextView.setOnGetLineCountListener(new ExpandableTextView.OnGetLineCountListener() {
+            @Override
+            public void onGetLineCount(int lineCount, boolean canExpand) {
+                Toast.makeText(MainActivity.this, "行数：" + lineCount + "  是否满足展开条件：" + canExpand, Toast.LENGTH_SHORT).show();
+            }
+        });
+				//添加展开和收回操作 只触发点击 不真正触发展开和收回操作
+        linkedTextView.setExpandOrContractClickListener(type -> {
+            if (type.equals(StatusType.STATUS_CONTRACT)) {
+                Toast.makeText(MainActivity.this, "收回操作，不真正触发收回操作", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(MainActivity.this, "展开操作，不真正触发展开操作", Toast.LENGTH_SHORT).show();
+            }
+        },false);
+```
