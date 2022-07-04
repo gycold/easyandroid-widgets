@@ -21,7 +21,7 @@ many android useful widget sets
 
 ## 三、TextView、形状相关
 1. `ShapeXXX`
-[README - ShapeView.md](https://github.com/gycold/easyandroid-widgets/blob/master/easy-widgets/src/main/java/com/easyandroid/widgets/textview/README%20-%20ShapeView.md)
+[README - ShapeView.md](https://github.com/gycold/easyandroid-widgets/blob/master/easy-widgets/src/main/java/com/easyandroid/widgets/textview/shape/README%20-%20ShapeView.md)
 2. `LinkedTextView`
 [README - LinkedTextView.md](https://github.com/gycold/easyandroid-widgets/blob/master/easy-widgets/src/main/java/com/easyandroid/widgets/textview/link/README%20-%20LinkedTextView.md)
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EasyAndroidWidgets</string>
+    <string name="app_name">快捷键</string>
 
     <string name="search">搜索</string>
     <string name="share">分享</string>
@@ -8,4 +8,27 @@
     <string name="open">打开</string>
     <string name="close">关闭</string>
     <string name="notification">Notification</string>
+
+
+    <!--快捷方式-->
+    <string name="static_shortcut_short_label">静态快捷键</string>
+    <string name="static_shortcut_long_label">静态快捷方式</string>
+    <string name="static_disabled_message">点击无效</string>
+
+    <string name="dynamic_shortcut_short_label1">动态1</string>
+    <string name="dynamic_shortcut_long_label1">动态快捷方式1</string>
+
+    <string name="dynamic_shortcut_short_label2">动态2</string>
+    <string name="dynamic_shortcut_long_label2">动态快捷方式2</string>
+
+    <string name="pinned_shortcut_short_label2">桌面快捷键</string>
+    <string name="pinned_shortcut_long_label2">桌面快捷方式</string>
+
+    <string name="add_new_website">添加新的站点</string>
+    <string name="add_new_website_short">添加站点</string>
+    <string name="existing_shortcuts">存在的 shortcuts:</string>
+    <string name="remove_shortcut">移除</string>
+    <string name="disable_shortcut">无效</string>
+    <string name="enable_shortcut">有效</string>
+    <string name="disable_message">你不能点击他</string>
 </resources>

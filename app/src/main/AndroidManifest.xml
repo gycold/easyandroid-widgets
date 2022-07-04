@@ -3,6 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.easy.widgets">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--    <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS" /> &lt;!&ndash; 添加快捷方式 &ndash;&gt;-->
+    <!--    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" /> &lt;!&ndash; 移除快捷方式 &ndash;&gt;-->
+    <!--    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" /> &lt;!&ndash; 查询快捷方式 &ndash;&gt;-->
+    <!--    &lt;!&ndash; 验证快捷方式是否存 &ndash;&gt;-->
+    <!--    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />-->
+    <!--    &lt;!&ndash; 更改主屏幕中的设置和快捷方式 &ndash;&gt;-->
+    <!--    <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS" />-->
+    <!--    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />-->
+    <!--    <uses-permission android:name="com.android.launcher2.permission.READ_SETTINGS" />-->
+    <!--    <uses-permission android:name="com.android.launcher2.permission.WRITE_SETTINGS" />-->
+    <!--    <uses-permission android:name="com.android.launcher3.permission.READ_SETTINGS" />-->
+    <!--    <uses-permission android:name="com.android.launcher3.permission.WRITE_SETTINGS" />-->
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -15,15 +29,31 @@
         android:theme="@style/Theme.EasyAndroidWidgets"
         tools:targetApi="31">
         <activity
-            android:name=".NotificationActivity"
+            android:name=".shortcut.ShortcutActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
         </activity>
         <activity android:name=".MainActivity" />
+        <activity android:name=".NotificationActivity" />
+        <activity
+            android:name=".shortcut.TestActivity"
+            android:exported="true" />
+
+        <receiver
+            android:name=".shortcut.google.MyReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.LOCALE_CHANGED" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

@@ -4,15 +4,21 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/app/src/main/res/drawable/btn_selector_done.xml" value="0.218" />
+        <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/app/src/main/res/drawable/checkbox_checked_ic.xml" value="0.218" />
         <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/app/src/main/res/drawable/popup_sys_circle_bg.xml" value="0.218" />
         <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/app/src/main/res/drawable/toast_bg.xml" value="0.2175" />
         <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/app/src/main/res/layout/activity_main.xml" value="0.24114583333333334" />
         <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/app/src/main/res/layout/activity_notification.xml" value="0.4" />
+        <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/app/src/main/res/layout/activity_shortcut.xml" value="0.24114583333333334" />
+        <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/app/src/main/res/layout/activity_test.xml" value="0.24114583333333334" />
         <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/app/src/main/res/layout/activity_window_manager.xml" value="0.24114583333333334" />
         <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/app/src/main/res/layout/layout_notification.xml" value="0.4897959183673469" />
         <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/app/src/main/res/layout/layout_toolbar.xml" value="0.24114583333333334" />
+        <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/app/src/main/res/layout/list_item.xml" value="0.24114583333333334" />
         <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/app/src/main/res/layout/loading_dialog.xml" value="0.24114583333333334" />
         <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/app/src/main/res/layout/m_toolbar.xml" value="0.24114583333333334" />
+        <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/app/src/main/res/layout/main.xml" value="0.264" />
+        <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/app/src/main/res/layout/shapeview_demo.xml" value="0.24010416666666667" />
         <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/app/src/main/res/menu/menu_toolbar.xml" value="0.24114583333333334" />
         <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/app/src/main/res/menu/toolbar_right.xml" value="0.24114583333333334" />
         <entry key="..\:/Projects/MyGithub/EasyAndroidWidgets/easy-widgets/src/main/res/drawable/btn_assuere_border_bg_nol.xml" value="0.2075" />
