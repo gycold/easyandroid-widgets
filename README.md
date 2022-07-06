@@ -58,9 +58,14 @@ many android useful widget sets
 ## 七、Dialog相关
 1. `EasyDialog`
 [README - EasyDialog.md](https://github.com/gycold/easyandroid-widgets/blob/master/easy-widgets/src/main/java/com/easyandroid/widgets/dialog/dialog/README%20-%20EasyDialog.md)
+2. `EasySpinner`
+[README - EasySpinner.md](https://github.com/gycold/easyandroid-widgets/blob/master/easy-widgets/src/main/java/com/easyandroid/widgets/dialog/spinner/README%20-%20EasySpinner.md)
 
 -----
 
 ## 八、Layout相关
 1. `SquareLinearLayout`
+
+-----
+
 
