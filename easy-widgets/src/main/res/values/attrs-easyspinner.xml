@@ -7,13 +7,17 @@
     </attr>
 
     <declare-styleable name="NiceSpinner">
-        <attr name="arrowTint" format="color" />
-        <attr name="hideArrow" format="boolean" />
-        <attr name="arrowDrawable" format="reference|color" />
-        <attr name="dropDownListPaddingBottom" format="dimension" />
-        <attr name="backgroundSelector" format="integer" />
-        <attr name="textTint" format="color" />
-        <attr name="popupTextAlignment" />
-        <attr name="entries" format="reference" />
+        <attr name="spinner_arrowTint" format="color" />
+        <attr name="spinner_hideArrow" format="boolean" />
+        <attr name="spinner_arrowDrawable" format="reference|color" />
+        <!--标题与下拉菜单栏间距-->
+        <attr name="spinner_title_margin" format="dimension" />
+        <!--spinner本身的背景-->
+        <attr name="spinner_backgroundSelector" format="integer" />
+        <!--下拉菜单item背景！-->
+        <attr name="spinner_item_backgroundSelector" format="integer" />
+        <attr name="spinner_textTint" format="color" />
+        <attr name="spinner_popupTextAlignment" format="enum" />
+        <attr name="spinner_entries" format="reference" />
     </declare-styleable>
 </resources>

@@ -61,11 +61,12 @@ public class EasySpinner extends AppCompatTextView {
 
     private boolean isArrowHidden;
     private int textColor;
-    private int backgroundSelector;
+    private int spinner_backgroundSelector;
+    private int item_backgroundSelector;
     private int arrowDrawableTint;
     private int displayHeight;
     private int parentVerticalOffset;
-    private int dropDownListPaddingBottom;
+    private int spinner_title_margin;
     private @DrawableRes
     int arrowDrawableResId;
     private SpinnerTextFormatter spinnerTextFormatter = new SimpleSpinnerTextFormatter();
@@ -135,9 +136,10 @@ public class EasySpinner extends AppCompatTextView {
         setPadding(resources.getDimensionPixelSize(R.dimen.three_grid_unit), defaultPadding, defaultPadding,
                 defaultPadding);
         setClickable(true);
-        backgroundSelector = typedArray.getResourceId(R.styleable.NiceSpinner_backgroundSelector, R.drawable.easyspinner_selector);
-        setBackgroundResource(backgroundSelector);
-        textColor = typedArray.getColor(R.styleable.NiceSpinner_textTint, getDefaultTextColor(context));
+        spinner_backgroundSelector = typedArray.getResourceId(R.styleable.NiceSpinner_spinner_backgroundSelector, R.drawable.easyspinner_selector);
+        item_backgroundSelector = typedArray.getResourceId(R.styleable.NiceSpinner_spinner_item_backgroundSelector, R.drawable.easyspinner_selector);
+        setBackgroundResource(spinner_backgroundSelector);
+        textColor = typedArray.getColor(R.styleable.NiceSpinner_spinner_textTint, getDefaultTextColor(context));
         setTextColor(textColor);
         popupWindow = new ListPopupWindow(context);
         popupWindow.setBackgroundDrawable(null);//取消阴影动画
@@ -182,16 +184,15 @@ public class EasySpinner extends AppCompatTextView {
             }
         });
 
-        isArrowHidden = typedArray.getBoolean(R.styleable.NiceSpinner_hideArrow, false);
-        arrowDrawableTint = typedArray.getColor(R.styleable.NiceSpinner_arrowTint, getResources().getColor(android.R.color.black));
-        arrowDrawableResId = typedArray.getResourceId(R.styleable.NiceSpinner_arrowDrawable, R.drawable.easyspinner_arrow);
-        dropDownListPaddingBottom =
-                typedArray.getDimensionPixelSize(R.styleable.NiceSpinner_dropDownListPaddingBottom, 0);
-        horizontalAlignment = TextAlignment.fromId(
-                typedArray.getInt(R.styleable.NiceSpinner_popupTextAlignment, TextAlignment.CENTER.ordinal())
-        );
+        isArrowHidden = typedArray.getBoolean(R.styleable.NiceSpinner_spinner_hideArrow, false);
+        arrowDrawableTint = typedArray.getColor(R.styleable.NiceSpinner_spinner_arrowTint, getResources().getColor(android.R.color.black));
+        arrowDrawableResId = typedArray.getResourceId(R.styleable.NiceSpinner_spinner_arrowDrawable, R.drawable.easyspinner_arrow);
+        spinner_title_margin = typedArray.getDimensionPixelSize(R.styleable.NiceSpinner_spinner_title_margin, 0);
+        popupWindow.setVerticalOffset(spinner_title_margin);
 
-        CharSequence[] entries = typedArray.getTextArray(R.styleable.NiceSpinner_entries);
+        horizontalAlignment = TextAlignment.fromId(typedArray.getInt(R.styleable.NiceSpinner_spinner_popupTextAlignment, TextAlignment.CENTER.ordinal()));
+
+        CharSequence[] entries = typedArray.getTextArray(R.styleable.NiceSpinner_spinner_entries);
         if (entries != null) {
             attachDataSource(Arrays.asList(entries));
         }
@@ -336,13 +337,12 @@ public class EasySpinner extends AppCompatTextView {
     }
 
     public <T> void attachDataSource(@NonNull List<T> list) {
-        adapter = new EasySpinnerAdapter<>(getContext(), list, textColor, backgroundSelector, spinnerTextFormatter, horizontalAlignment);
+        adapter = new EasySpinnerAdapter<>(getContext(), list, textColor, item_backgroundSelector, spinnerTextFormatter, horizontalAlignment);
         setAdapterInternal(adapter);
     }
 
     public void setAdapter(ListAdapter adapter) {
-        this.adapter = new EasySpinnerAdapterWrapper(getContext(), adapter, textColor, backgroundSelector,
-                spinnerTextFormatter, horizontalAlignment);
+        this.adapter = new EasySpinnerAdapterWrapper(getContext(), adapter, textColor, item_backgroundSelector, spinnerTextFormatter, horizontalAlignment);
         setAdapterInternal(this.adapter);
     }
 
@@ -440,12 +440,12 @@ public class EasySpinner extends AppCompatTextView {
         return isArrowHidden;
     }
 
-    public void setDropDownListPaddingBottom(int paddingBottom) {
-        dropDownListPaddingBottom = paddingBottom;
+    public void setSpinner_title_margin(int paddingBottom) {
+        spinner_title_margin = paddingBottom;
     }
 
-    public int getDropDownListPaddingBottom() {
-        return dropDownListPaddingBottom;
+    public int getSpinner_title_margin() {
+        return spinner_title_margin;
     }
 
     public void setSpinnerTextFormatter(SpinnerTextFormatter spinnerTextFormatter) {

@@ -63,8 +63,9 @@ string.xml:
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        app:arrowTint="#999999"
-        app:backgroundSelector="@drawable/background_selector"
+        app:spinner_arrowTint="#999999"
+        app:spinner_backgroundSelector="@drawable/background_selector"
+        app:spinner_item_backgroundSelector="@drawable/background_selector"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,11 +107,12 @@ Java中：
 
 | name                      | type      | info                                                   |
 |------------------------   |-----------|--------------------------------------------------------|
-| arrowTint                 | color     | 设置下拉箭头颜色                                          |
-| hideArrow                 | boolean   | 设置是否显示下拉箭头                                       |
-| arrowDrawable             | reference | 设置下拉箭头的drawable                                    |
-| textTint                  | color     | 设置字体颜色                                              |
-| dropDownListPaddingBottom | dimension | 设置下拉菜单的底部间隙                                      |
-| backgroundSelector        | integer   | 为下拉菜单的每一列设置背景                                   |
-| popupTextAlignment        | enum      | 设置菜单文字的对齐方式                                      |
-| entries                   | reference | 设置字符串集合                                             |
+| spinner_arrowTint                 | color     | 设置下拉箭头颜色                                          |
+| spinner_hideArrow                 | boolean   | 设置是否显示下拉箭头                                       |
+| spinner_arrowDrawable             | reference | 设置下拉箭头的drawable                                    |
+| spinner_textTint                  | color     | 设置字体颜色                                              |
+| spinner_title_margin              | dimension | 标题与下拉菜单栏间距                                      |
+| spinner_backgroundSelector        | integer   | spinner本身的背景                                   |
+| spinner_item_backgroundSelector   | integer   | 为下拉菜单的每一列设置背景                                   |
+| spinner_popupTextAlignment        | enum      | 设置菜单文字的对齐方式                                      |
+| spinner_entries                   | reference | 设置字符串集合                                             |

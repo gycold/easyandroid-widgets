@@ -4,6 +4,7 @@
     <!--common-->
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
+    <color name="pressed">#fff1f1f1</color>
 
     <!--SwitchButton-->
     <color name="sw_ripple_normal">#1E000000</color>
