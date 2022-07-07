@@ -19,7 +19,7 @@
 ### 用法：
 ```xml
 <com.easyandroid.widgets.dialog.spinner.EasySpinner
-        android:id="@+id/nice_spinner"
+        android:id="@+id/easy_spinner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
@@ -32,7 +32,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <com.easyandroid.widgets.dialog.spinner.EasySpinner
-        android:id="@+id/niceSpinnerXml"
+        android:id="@+id/easySpinnerXml"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
@@ -45,8 +45,17 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:layout_constraintVertical_bias="0.0" />
 
+string.xml:
+<resources>
+    <string-array name="courses">
+        <item>English</item>
+        <item>Chinese</item>
+        <item>Math</item>
+    </string-array>
+<resources>
+
     <com.easyandroid.widgets.dialog.spinner.EasySpinner
-        android:id="@+id/tinted_nice_spinner"
+        android:id="@+id/tinted_easy_spinner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -62,6 +71,35 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:layout_constraintVertical_bias="0.0"
         app:textTint="@color/colorPrimary" />
+```
+
+Java中：
+
+```xml
+        EasySpinner spinner = findViewById(R.id.tinted_easy_spinner);
+        List<Person> people = new ArrayList<>();
+
+        people.add(new Person("Tony", "Stark"));
+        people.add(new Person("Steve", "Rogers"));
+        people.add(new Person("Bruce", "Banner"));
+
+        SpinnerTextFormatter textFormatter = new SpinnerTextFormatter<Person>() {
+            @Override
+            public Spannable format(Person person) {
+                return new SpannableString(person.getName() + " " + person.getSurname());
+            }
+        };
+
+        spinner.setSpinnerTextFormatter(textFormatter);
+        spinner.setSelectedTextFormatter(textFormatter);
+        spinner.setOnSpinnerItemSelectedListener(new OnSpinnerItemSelectedListener() {
+            @Override
+            public void onItemSelected(EasySpinner parent, View view, int position, long id) {
+                Person person = (Person) spinner.getSelectedItem();
+                Toast.makeText(MainActivity.this, "Selected: " + person.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+        spinner.attachDataSource(people);
 ```
 
 ### 属性：
