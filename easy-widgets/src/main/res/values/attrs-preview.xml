@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--图片页面底部标量-->
+    <declare-styleable name="PreviewBezierIndicatorView">
+        <attr name="preview_selectedColor" format="color"/>
+        <attr name="preview_unSelectedColor" format="color"/>
+        <attr name="preview_selectedRadius" format="dimension"/>
+        <attr name="preview_unSelectedRadius" format="dimension"/>
+        <attr name="preview_spacing" format="dimension"/>
+    </declare-styleable>
+</resources>

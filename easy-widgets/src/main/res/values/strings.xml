@@ -9,4 +9,9 @@
     <string name="easy_dialog_error">发生错误，点击屏幕重试</string>
     <string name="easy_dialog_error_reload">点击屏幕重试</string>
 
+    <!--EasyPreview-->
+    <string name="string_count">%1$s/%2$s</string>
+    <string name="playback_failed">播放失败</string>
+
+
 </resources>

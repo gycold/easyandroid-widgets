@@ -16,4 +16,7 @@
     <item name="dialog_error_layout_id" type="id" />
     <item name="dialog_empty_tv_id" type="id" />
     <item name="dialog_error_tv_id" type="id" />
+
+    <!--EasyPreview-->
+    <item name="item_image_key" type="id" />
 </resources>

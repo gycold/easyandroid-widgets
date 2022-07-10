@@ -13,9 +13,11 @@ many android useful widget sets
 
 
 ## 一、ImageView相关
-1. `CircleImageView`
+1. `CircleImageView`：圆形图片
 [README - CircleImageView.md](easy-widgets/src/main/java/com/easyandroid/widgets/imageview/README%20-%20CircleImageView.md)
-2. `SquareImageView`
+2. `SquareImageView`：高度按照宽度的正方体图片
+3. `EasyPreview`：图片预览、手势放大
+[README - EasyPreview.md](easy-widgets/src/main/java/com/easyandroid/widgets/imageview/preview/README%20-%20EasyPreview.md)
 
 -----
 

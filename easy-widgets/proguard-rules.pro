@@ -69,3 +69,6 @@
 -dontwarn com.google.android.material.**
 -dontnote com.google.android.material.**
 -dontwarn androidx.**
+
+#实体类
+-keep class com.easyandroid.widgets.imageview.preview.previewlibrary.entity.** {*;}

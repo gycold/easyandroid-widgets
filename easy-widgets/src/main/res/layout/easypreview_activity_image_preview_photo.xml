@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <com.easyandroid.widgets.imageview.preview.previewlibrary.widget.PhotoViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent" />
+
+    <TextView
+        android:id="@+id/tv_add_dot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_vertical"
+        android:layout_margin="12dp"
+        android:gravity="center"
+        android:text="1/2"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <com.easyandroid.widgets.imageview.preview.previewlibrary.widget.BezierIndicatorView
+        android:id="@+id/bezier_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_vertical|center_horizontal"
+        android:paddingBottom="10dp"
+        android:visibility="gone"
+        app:preview_selectedColor="@android:color/white"
+        app:preview_selectedRadius="4dp"
+        app:preview_spacing="6dp"
+        app:preview_unSelectedColor="@android:color/darker_gray"
+        app:preview_unSelectedRadius="4dp" />
+
+</FrameLayout>

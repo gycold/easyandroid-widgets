@@ -2,4 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.easyandroid.widgets">
 
+    <application
+        android:allowBackup="true"
+        android:supportsRtl="true">
+        <activity
+            android:name="com.easyandroid.widgets.imageview.preview.previewlibrary.EasyPreviewActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:name="com.easyandroid.widgets.imageview.preview.previewlibrary.EasyPreviewVideoPlayerActivity" />
+    </application>
 </manifest>
