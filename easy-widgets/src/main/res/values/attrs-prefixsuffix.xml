@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PrefixSuffixTextView">
+        <!--前缀文字-->
+        <attr name="easy_prefixText" format="string"/>
+        <!--前缀文字颜色-->
+        <attr name="easy_prefixTextColor" format="color"/>
+        <!--前缀内容文字-->
+        <attr name="easy_contentText" format="string"/>
+        <!--前缀内容文字颜色-->
+        <attr name="easy_contentTextColor" format="color"/>
+        <!--后缀文字-->
+        <attr name="easy_suffixText" format="string"/>
+        <!--后缀文字颜色-->
+        <attr name="easy_suffixTextColor" format="color"/>
+    </declare-styleable>
+</resources>

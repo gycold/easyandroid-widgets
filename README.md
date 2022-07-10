@@ -33,6 +33,9 @@ many android useful widget sets
 [README - ShapeView.md](easy-widgets/src/main/java/com/easyandroid/widgets/textview/shape/README%20-%20ShapeView.md)
 2. `LinkedTextView`
 [README - LinkedTextView.md](easy-widgets/src/main/java/com/easyandroid/widgets/textview/link/README%20-%20LinkedTextView.md)
+3. `PrefixSuffixTextView`
+4. 支持添加前缀、后缀、中间文字，可设置这些文字颜色
+[README - PrefixSuffixTextView.md](easy-widgets/src/main/java/com/easyandroid/widgets/textview/README%20-%20PrefixSuffixTextView.md)
 -----
 
 ## 四、Compound相关
