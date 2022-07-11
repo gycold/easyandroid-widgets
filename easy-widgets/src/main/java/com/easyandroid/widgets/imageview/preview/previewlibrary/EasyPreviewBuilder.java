@@ -239,7 +239,7 @@ public final class EasyPreviewBuilder {
      * **/
     public void start() {
         if (className == null) {
-            intent.setClass(mContext, GPreviewActivity.class);
+            intent.setClass(mContext, EasyPreviewActivity.class);
         } else {
             intent.setClass(mContext, className);
         }
