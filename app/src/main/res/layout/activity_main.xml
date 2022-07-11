@@ -31,4 +31,11 @@
         app:dashOrientation="0"
         app:lineHeight="1dp"/>
 
+    <com.easyandroid.widgets.textview.PrefixSuffixTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:easy_prefixText="1"
+        app:easy_suffixText="2"
+        app:easy_suffixTextColor="@color/sw_ripple_checked"/>
+
 </LinearLayout>

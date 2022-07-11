@@ -351,7 +351,7 @@ public class EasySpinner extends AppCompatTextView {
     }
 
     private <T> void setAdapterInternal(EasySpinnerBaseAdapter<T> adapter) {
-        if (adapter.getCount() >= 0) {
+        if (adapter != null && adapter.getCount() >= 0) {
             // If the adapter needs to be set again, ensure to reset the selected index as well
             selectedIndex = 0;
             popupWindow.setAdapter(adapter);
@@ -362,7 +362,7 @@ public class EasySpinner extends AppCompatTextView {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         if (isEnabled() && event.getAction() == MotionEvent.ACTION_UP) {
-            if (!popupWindow.isShowing() && adapter.getCount() > 0) {
+            if (adapter!=null && !popupWindow.isShowing() && adapter.getCount() > 0) {
                 showDropDown();
             } else {
                 dismissDropDown();
