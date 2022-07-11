@@ -134,7 +134,7 @@ public class EasySpinner extends AppCompatTextView {
         int defaultPadding = 0;
 
         setGravity(Gravity.CENTER_VERTICAL | Gravity.START);
-        setPadding(resources.getDimensionPixelSize(R.dimen.three_grid_unit), defaultPadding, defaultPadding, defaultPadding);
+//        setPadding(resources.getDimensionPixelSize(R.dimen.three_grid_unit), defaultPadding, defaultPadding, defaultPadding);
         setClickable(true);
         spinner_backgroundSelector = typedArray.getResourceId(R.styleable.NiceSpinner_spinner_backgroundSelector, R.drawable.easyspinner_selector);
         item_backgroundSelector = typedArray.getResourceId(R.styleable.NiceSpinner_spinner_item_backgroundSelector, R.drawable.easyspinner_selector);
