@@ -134,14 +134,13 @@ public class EasySpinner extends AppCompatTextView {
         int defaultPadding = 0;
 
         setGravity(Gravity.CENTER_VERTICAL | Gravity.START);
-        setPadding(resources.getDimensionPixelSize(R.dimen.three_grid_unit), defaultPadding, defaultPadding,
-                defaultPadding);
+        setPadding(resources.getDimensionPixelSize(R.dimen.three_grid_unit), defaultPadding, defaultPadding, defaultPadding);
         setClickable(true);
         spinner_backgroundSelector = typedArray.getResourceId(R.styleable.NiceSpinner_spinner_backgroundSelector, R.drawable.easyspinner_selector);
         item_backgroundSelector = typedArray.getResourceId(R.styleable.NiceSpinner_spinner_item_backgroundSelector, R.drawable.easyspinner_selector);
         setBackgroundResource(spinner_backgroundSelector);
         textColor = typedArray.getColor(R.styleable.NiceSpinner_spinner_textTint, getDefaultTextColor(context));
-        setTextColor(textColor);
+//        setTextColor(textColor);
         popupWindow = new ListPopupWindow(context);
         popupWindow.setBackgroundDrawable(null);//取消阴影动画
         popupWindow.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -263,10 +262,8 @@ public class EasySpinner extends AppCompatTextView {
 
     private int getDefaultTextColor(Context context) {
         TypedValue typedValue = new TypedValue();
-        context.getTheme()
-                .resolveAttribute(android.R.attr.textColorPrimary, typedValue, true);
-        TypedArray typedArray = context.obtainStyledAttributes(typedValue.data,
-                new int[]{android.R.attr.textColorPrimary});
+        context.getTheme().resolveAttribute(android.R.attr.textColorPrimary, typedValue, true);
+        TypedArray typedArray = context.obtainStyledAttributes(typedValue.data, new int[]{android.R.attr.textColorPrimary});
         int defaultTextColor = typedArray.getColor(0, Color.BLACK);
         typedArray.recycle();
         return defaultTextColor;
@@ -363,7 +360,7 @@ public class EasySpinner extends AppCompatTextView {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         if (isEnabled() && event.getAction() == MotionEvent.ACTION_UP) {
-            if (adapter!=null && !popupWindow.isShowing() && adapter.getCount() > 0) {
+            if (adapter != null && !popupWindow.isShowing() && adapter.getCount() > 0) {
                 showDropDown();
             } else {
                 dismissDropDown();
