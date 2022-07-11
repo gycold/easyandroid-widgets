@@ -130,7 +130,8 @@ public class EasySpinner extends AppCompatTextView {
     private void init(Context context, AttributeSet attrs) {
         Resources resources = getResources();
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.NiceSpinner);
-        int defaultPadding = resources.getDimensionPixelSize(R.dimen.one_and_a_half_grid_unit);
+//        int defaultPadding = resources.getDimensionPixelSize(R.dimen.one_and_a_half_grid_unit);
+        int defaultPadding = 0;
 
         setGravity(Gravity.CENTER_VERTICAL | Gravity.START);
         setPadding(resources.getDimensionPixelSize(R.dimen.three_grid_unit), defaultPadding, defaultPadding,
