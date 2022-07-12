@@ -10,7 +10,7 @@ import android.widget.RelativeLayout;
 /**
  * package: com.easyandroid.widgets.layout.ExpandRelativeLayout
  * author: gyc
- * description: 可折叠布局，注意只能有一个子布局
+ * description: 可折叠布局
  * time: create at 2022/7/12 12:34
  */
 public class ExpandRelativeLayout extends RelativeLayout {
