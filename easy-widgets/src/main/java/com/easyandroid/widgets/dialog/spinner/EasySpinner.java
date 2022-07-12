@@ -2,7 +2,6 @@ package com.easyandroid.widgets.dialog.spinner;
 
 import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -128,7 +127,7 @@ public class EasySpinner extends AppCompatTextView {
     }
 
     private void init(Context context, AttributeSet attrs) {
-        Resources resources = getResources();
+//        Resources resources = getResources();
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.NiceSpinner);
 //        int defaultPadding = resources.getDimensionPixelSize(R.dimen.one_and_a_half_grid_unit);
         int defaultPadding = 0;
