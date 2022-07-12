@@ -45,7 +45,7 @@
                 android:layout_marginBottom="15dp"
                 android:gravity="left"
                 android:lineSpacingExtra="6dp"
-                android:textColor="#333333"
+                android:textColor="#666666"
                 android:textSize="16sp"
                 tools:text="我们将在30分钟处理，稍后通知您订单结果！感谢您选择" />
         </LinearLayout>

@@ -162,8 +162,8 @@ public class EasyDialogController {
                 public boolean onPreDraw() {
 
                     int lineCount = tv_content.getLineCount();
-                    if (lineCount >= 3) {
-                        //超过三行居左显示
+                    if (lineCount >= 2) {
+                        //超过2行居左显示
                         tv_content.setGravity(Gravity.START);
                     } else {
                         //默认居中
