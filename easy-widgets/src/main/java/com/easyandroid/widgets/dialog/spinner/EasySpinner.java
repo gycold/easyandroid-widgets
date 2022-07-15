@@ -15,7 +15,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
-import android.widget.ListPopupWindow;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 
@@ -29,6 +28,7 @@ import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
+import androidx.appcompat.widget.ListPopupWindow;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.interpolator.view.animation.LinearOutSlowInInterpolator;
@@ -128,17 +128,17 @@ public class EasySpinner extends AppCompatTextView {
 
     private void init(Context context, AttributeSet attrs) {
 //        Resources resources = getResources();
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.NiceSpinner);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.EasySpinner);
 //        int defaultPadding = resources.getDimensionPixelSize(R.dimen.one_and_a_half_grid_unit);
         int defaultPadding = 0;
 
         setGravity(Gravity.CENTER_VERTICAL | Gravity.START);
 //        setPadding(resources.getDimensionPixelSize(R.dimen.three_grid_unit), defaultPadding, defaultPadding, defaultPadding);
         setClickable(true);
-        spinner_backgroundSelector = typedArray.getResourceId(R.styleable.NiceSpinner_spinner_backgroundSelector, R.drawable.easyspinner_selector);
-        item_backgroundSelector = typedArray.getResourceId(R.styleable.NiceSpinner_spinner_item_backgroundSelector, R.drawable.easyspinner_selector);
+        spinner_backgroundSelector = typedArray.getResourceId(R.styleable.EasySpinner_spinner_backgroundSelector, R.drawable.easyspinner_selector);
+        item_backgroundSelector = typedArray.getResourceId(R.styleable.EasySpinner_spinner_item_backgroundSelector, R.drawable.easyspinner_selector);
         setBackgroundResource(spinner_backgroundSelector);
-        textColor = typedArray.getColor(R.styleable.NiceSpinner_spinner_textTint, getDefaultTextColor(context));
+        textColor = typedArray.getColor(R.styleable.EasySpinner_spinner_textTint, getDefaultTextColor(context));
 //        setTextColor(textColor);
         popupWindow = new ListPopupWindow(context);
         popupWindow.setBackgroundDrawable(null);//取消阴影动画
@@ -147,9 +147,9 @@ public class EasySpinner extends AppCompatTextView {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // The selected item is not displayed within the list, so when the selected position is equal to
                 // the one of the currently selected item it gets shifted to the next item.
-                if (position >= selectedIndex && position < adapter.getCount()) {
-                    position++;
-                }
+//                if (position >= selectedIndex && position < adapter.getCount()) {
+//                    position++;
+//                }
                 selectedIndex = position;
 
                 if (onSpinnerItemSelectedListener != null) {
@@ -183,15 +183,15 @@ public class EasySpinner extends AppCompatTextView {
             }
         });
 
-        isArrowHidden = typedArray.getBoolean(R.styleable.NiceSpinner_spinner_hideArrow, false);
-        arrowDrawableTint = typedArray.getColor(R.styleable.NiceSpinner_spinner_arrowTint, getResources().getColor(android.R.color.black));
-        arrowDrawableResId = typedArray.getResourceId(R.styleable.NiceSpinner_spinner_arrowDrawable, R.drawable.easyspinner_arrow);
-        spinner_title_margin = typedArray.getDimensionPixelSize(R.styleable.NiceSpinner_spinner_title_margin, 0);
+        isArrowHidden = typedArray.getBoolean(R.styleable.EasySpinner_spinner_hideArrow, false);
+        arrowDrawableTint = typedArray.getColor(R.styleable.EasySpinner_spinner_arrowTint, getResources().getColor(android.R.color.black));
+        arrowDrawableResId = typedArray.getResourceId(R.styleable.EasySpinner_spinner_arrowDrawable, R.drawable.easyspinner_arrow);
+        spinner_title_margin = typedArray.getDimensionPixelSize(R.styleable.EasySpinner_spinner_title_margin, 0);
         popupWindow.setVerticalOffset(spinner_title_margin);
 
-        horizontalAlignment = TextAlignment.fromId(typedArray.getInt(R.styleable.NiceSpinner_spinner_popupTextAlignment, TextAlignment.CENTER.ordinal()));
+        horizontalAlignment = TextAlignment.fromId(typedArray.getInt(R.styleable.EasySpinner_spinner_popupTextAlignment, TextAlignment.CENTER.ordinal()));
 
-        CharSequence[] entries = typedArray.getTextArray(R.styleable.NiceSpinner_spinner_entries);
+        CharSequence[] entries = typedArray.getTextArray(R.styleable.EasySpinner_spinner_entries);
         if (entries != null) {
             attachDataSource(Arrays.asList(entries));
         }

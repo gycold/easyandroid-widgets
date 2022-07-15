@@ -28,16 +28,18 @@ public class EasySpinnerAdapter<T> extends EasySpinnerBaseAdapter {
 
     @Override
     public int getCount() {
-        return items.size() - 1;
+//        return items.size() - 1;
+        return items.size();
     }
 
     @Override
     public T getItem(int position) {
-        if (position >= selectedIndex) {
-            return items.get(position + 1);
-        } else {
-            return items.get(position);
-        }
+//        if (position >= selectedIndex) {
+//            return items.get(position + 1);
+//        } else {
+//            return items.get(position);
+//        }
+        return items.get(position);
     }
 
     @Override

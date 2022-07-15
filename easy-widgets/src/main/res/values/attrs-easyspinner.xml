@@ -6,7 +6,7 @@
         <enum name="center" value="2" />
     </attr>
 
-    <declare-styleable name="NiceSpinner">
+    <declare-styleable name="EasySpinner">
         <attr name="spinner_arrowTint" format="color" />
         <attr name="spinner_hideArrow" format="boolean" />
         <attr name="spinner_arrowDrawable" format="reference|color" />
