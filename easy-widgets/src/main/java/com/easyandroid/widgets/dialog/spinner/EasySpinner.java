@@ -71,6 +71,7 @@ public class EasySpinner extends AppCompatTextView {
     private SpinnerTextFormatter spinnerTextFormatter = new SimpleSpinnerTextFormatter();
     private SpinnerTextFormatter selectedTextFormatter = new SimpleSpinnerTextFormatter();
     private TextAlignment horizontalAlignment;
+    private String defaultText;
 
     @Nullable
     private ObjectAnimator arrowAnimator = null;
@@ -191,6 +192,8 @@ public class EasySpinner extends AppCompatTextView {
 
         horizontalAlignment = TextAlignment.fromId(typedArray.getInt(R.styleable.EasySpinner_spinner_popupTextAlignment, TextAlignment.CENTER.ordinal()));
 
+        defaultText = typedArray.getString(R.styleable.EasySpinner_spinner_default_text);
+
         CharSequence[] entries = typedArray.getTextArray(R.styleable.EasySpinner_spinner_entries);
         if (entries != null) {
             attachDataSource(Arrays.asList(entries));
@@ -292,7 +295,9 @@ public class EasySpinner extends AppCompatTextView {
     }
 
     private void setTextInternal(Object item) {
-        if (selectedTextFormatter != null) {
+        if (defaultText != null) {
+            setText(defaultText);
+        } else if (selectedTextFormatter != null) {
             setText(selectedTextFormatter.format(item));
         } else {
             setText(item.toString());

@@ -20,5 +20,7 @@
         <attr name="spinner_textTint" format="color" />
         <attr name="spinner_popupTextAlignment" format="enum" />
         <attr name="spinner_entries" format="reference" />
+        <!--默认文字-->
+        <attr name="spinner_default_text" format="string"/>
     </declare-styleable>
 </resources>
