@@ -2,6 +2,7 @@ package com.easyandroid.widgets.dialog.spinner;
 
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -13,6 +14,7 @@ import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -66,6 +68,7 @@ public class EasySpinner extends AppCompatTextView {
     private int displayHeight;
     private int parentVerticalOffset;
     private int spinner_title_margin;
+    private int maxNumber;//listPopwindow默认最大条目数，超过该数，高度不再增大，默认6个
     private @DrawableRes
     int arrowDrawableResId;
     private SpinnerTextFormatter spinnerTextFormatter = new SimpleSpinnerTextFormatter();
@@ -128,7 +131,7 @@ public class EasySpinner extends AppCompatTextView {
     }
 
     private void init(Context context, AttributeSet attrs) {
-//        Resources resources = getResources();
+        Resources resources = getResources();
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.EasySpinner);
 //        int defaultPadding = resources.getDimensionPixelSize(R.dimen.one_and_a_half_grid_unit);
         int defaultPadding = 0;
@@ -146,8 +149,8 @@ public class EasySpinner extends AppCompatTextView {
         popupWindow.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // The selected item is not displayed within the list, so when the selected position is equal to
-                // the one of the currently selected item it gets shifted to the next item.
+                // `The selected item is not displayed within the list, so when the selected position is equal to
+                // the one of the currently selected item it gets shifted to the next item.`
 //                if (position >= selectedIndex && position < adapter.getCount()) {
 //                    position++;
 //                }
@@ -188,6 +191,7 @@ public class EasySpinner extends AppCompatTextView {
         arrowDrawableTint = typedArray.getColor(R.styleable.EasySpinner_spinner_arrowTint, getResources().getColor(android.R.color.black));
         arrowDrawableResId = typedArray.getResourceId(R.styleable.EasySpinner_spinner_arrowDrawable, R.drawable.easyspinner_arrow);
         spinner_title_margin = typedArray.getDimensionPixelSize(R.styleable.EasySpinner_spinner_title_margin, 0);
+        maxNumber = typedArray.getInt(R.styleable.EasySpinner_spinner_maxNumber, 6);
         popupWindow.setVerticalOffset(spinner_title_margin);
 
         horizontalAlignment = TextAlignment.fromId(typedArray.getInt(R.styleable.EasySpinner_spinner_popupTextAlignment, TextAlignment.CENTER.ordinal()));
@@ -267,8 +271,10 @@ public class EasySpinner extends AppCompatTextView {
 
     private int getDefaultTextColor(Context context) {
         TypedValue typedValue = new TypedValue();
-        context.getTheme().resolveAttribute(android.R.attr.textColorPrimary, typedValue, true);
-        TypedArray typedArray = context.obtainStyledAttributes(typedValue.data, new int[]{android.R.attr.textColorPrimary});
+        context.getTheme()
+                .resolveAttribute(android.R.attr.textColorPrimary, typedValue, true);
+        TypedArray typedArray = context.obtainStyledAttributes(typedValue.data,
+                new int[]{android.R.attr.textColorPrimary});
         int defaultTextColor = typedArray.getColor(0, Color.BLACK);
         typedArray.recycle();
         return defaultTextColor;
@@ -354,7 +360,7 @@ public class EasySpinner extends AppCompatTextView {
     }
 
     private <T> void setAdapterInternal(EasySpinnerBaseAdapter<T> adapter) {
-        if (adapter != null && adapter.getCount() >= 0) {
+        if (adapter.getCount() >= 0) {
             // If the adapter needs to be set again, ensure to reset the selected index as well
             selectedIndex = 0;
             popupWindow.setAdapter(adapter);
@@ -401,6 +407,8 @@ public class EasySpinner extends AppCompatTextView {
             listView.setHorizontalScrollBarEnabled(false);
             listView.setVerticalFadingEdgeEnabled(false);
             listView.setHorizontalFadingEdgeEnabled(false);
+            listView.setCacheColorHint(Color.TRANSPARENT);
+            setListViewHeight(popupWindow.getListView(), maxNumber);
         }
     }
 
@@ -488,4 +496,30 @@ public class EasySpinner extends AppCompatTextView {
         this.onSpinnerItemSelectedListener = onSpinnerItemSelectedListener;
     }
 
+    public void setListViewHeight(ListView listView, int maxNumber) {
+        ListAdapter listAdapter = listView.getAdapter(); //得到ListView 添加的适配器
+        if (listAdapter == null) {
+            return;
+        }
+
+        View itemView = listAdapter.getView(0, null, listView); //获取其中的一项
+        //进行这一项的测量
+        itemView.measure(0, 0);
+        int itemHeight = itemView.getMeasuredHeight(); //一项的高度
+        int itemCount = listAdapter.getCount();//得到总的项数
+        ViewGroup.LayoutParams layoutParams = listView.getLayoutParams(); //进行布局参数的设置
+        layoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT;
+
+        if (itemCount <= maxNumber) {
+//            if (layoutParams instanceof ViewGroup.MarginLayoutParams) {
+//                layoutParams.set
+//            }
+            layoutParams.height = itemHeight * itemCount;
+//            layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, itemHeight * itemCount);
+        } else if (itemCount > maxNumber) {
+            layoutParams.height = itemHeight * maxNumber;
+//            layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, itemHeight * 6);
+        }
+        listView.setLayoutParams(layoutParams);
+    }
 }

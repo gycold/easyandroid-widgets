@@ -116,3 +116,4 @@ Java中：
 | spinner_item_backgroundSelector   | integer   | 为下拉菜单的每一列设置背景                                   |
 | spinner_popupTextAlignment        | enum      | 设置菜单文字的对齐方式                                      |
 | spinner_entries                   | reference | 设置字符串集合                                             |
+| spinner_maxNumber                 | integer   | spinner的最大条目数，超过该数量，高度不再增大                                             |

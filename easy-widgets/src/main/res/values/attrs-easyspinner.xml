@@ -22,5 +22,7 @@
         <attr name="spinner_entries" format="reference" />
         <!--默认文字-->
         <attr name="spinner_default_text" format="string"/>
+        <!--spinner的最大条目数，超过该数量，高度不再增大-->
+        <attr name="spinner_maxNumber" format="integer" />
     </declare-styleable>
 </resources>
