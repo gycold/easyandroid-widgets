@@ -72,3 +72,5 @@
 
 #实体类
 -keep class com.easyandroid.widgets.imageview.preview.previewlibrary.entity.** {*;}
+#所有的类
+-keep class com.easyandroid.widgets.** {*;}

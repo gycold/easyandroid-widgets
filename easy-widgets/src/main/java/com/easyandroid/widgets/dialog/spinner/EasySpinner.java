@@ -1,6 +1,7 @@
 package com.easyandroid.widgets.dialog.spinner;
 
 import android.animation.ObjectAnimator;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -198,7 +199,7 @@ public class EasySpinner extends AppCompatTextView {
 
         CharSequence[] entries = typedArray.getTextArray(R.styleable.EasySpinner_spinner_entries);
         if (entries != null) {
-            attachDataSource(Arrays.asList(entries));
+            attachDataSource(Arrays.asList(entries), false);
         }
 
         defaultText = typedArray.getString(R.styleable.EasySpinner_spinner_default_text);
@@ -345,26 +346,35 @@ public class EasySpinner extends AppCompatTextView {
         this.onItemSelectedListener = onItemSelectedListener;
     }
 
-    public <T> void attachDataSource(@NonNull List<T> list) {
+    /**
+     * 关联数据
+     *
+     * @param list
+     * @param isShowFirstLine 是否将数据的第一个显示在spinner上，默认false
+     * @param <T>
+     */
+    public <T> void attachDataSource(@NonNull List<T> list, boolean isShowFirstLine) {
         adapter = new EasySpinnerAdapter<>(getContext(), list, textColor, item_backgroundSelector, spinnerTextFormatter, horizontalAlignment);
-        setAdapterInternal(adapter);
+        setAdapterInternal(adapter, isShowFirstLine);
     }
 
     public void setAdapter(ListAdapter adapter) {
         this.adapter = new EasySpinnerAdapterWrapper(getContext(), adapter, textColor, item_backgroundSelector, spinnerTextFormatter, horizontalAlignment);
-        setAdapterInternal(this.adapter);
+        setAdapterInternal(this.adapter, false);
     }
 
     public TextAlignment getPopUpTextAlignment() {
         return horizontalAlignment;
     }
 
-    private <T> void setAdapterInternal(EasySpinnerBaseAdapter<T> adapter) {
+    private <T> void setAdapterInternal(EasySpinnerBaseAdapter<T> adapter, boolean isShowFirstLine) {
         if (adapter.getCount() >= 0) {
             // If the adapter needs to be set again, ensure to reset the selected index as well
             selectedIndex = 0;
             popupWindow.setAdapter(adapter);
-            setTextInternal(adapter.getItemInDataset(selectedIndex));
+            if (isShowFirstLine) {
+                setTextInternal(adapter.getItemInDataset(selectedIndex));
+            }
         }
     }
 
@@ -395,19 +405,21 @@ public class EasySpinner extends AppCompatTextView {
         popupWindow.dismiss();
     }
 
+    @SuppressLint("RestrictedApi")
     public void showDropDown() {
         if (!isArrowHidden) {
             animateArrow(true);
         }
         popupWindow.setAnchorView(this);
+        popupWindow.setOverlapAnchor(false);
         popupWindow.show();
         final ListView listView = popupWindow.getListView();
         if (listView != null) {
-            listView.setVerticalScrollBarEnabled(false);
-            listView.setHorizontalScrollBarEnabled(false);
-            listView.setVerticalFadingEdgeEnabled(false);
-            listView.setHorizontalFadingEdgeEnabled(false);
-            listView.setCacheColorHint(Color.TRANSPARENT);
+//            listView.setVerticalScrollBarEnabled(false);
+//            listView.setHorizontalScrollBarEnabled(false);
+//            listView.setVerticalFadingEdgeEnabled(false);
+//            listView.setHorizontalFadingEdgeEnabled(false);
+//            listView.setCacheColorHint(Color.TRANSPARENT);
             setListViewHeight(popupWindow.getListView(), maxNumber);
         }
     }
@@ -521,5 +533,6 @@ public class EasySpinner extends AppCompatTextView {
 //            layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, itemHeight * 6);
         }
         listView.setLayoutParams(layoutParams);
+
     }
 }
