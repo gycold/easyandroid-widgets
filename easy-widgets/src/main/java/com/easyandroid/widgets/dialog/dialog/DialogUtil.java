@@ -3,11 +3,14 @@ package com.easyandroid.widgets.dialog.dialog;
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.TextView;
 
 import com.easyandroid.widgets.R;
 import com.easyandroid.widgets.textview.LoadingTextView;
 
 import java.util.HashMap;
+
+import androidx.annotation.Nullable;
 
 /**
  * package: com.easyandroid.widgets.dialog.dialog.DialogUtil
@@ -72,7 +75,7 @@ public class DialogUtil {
      *
      * @param context Context
      */
-    public static void createLoadingDialog(Context context) {
+    public static void createLoadingDialog(Context context, @Nullable String txt) {
         closeLoadingDialog(context);
         EasyDialog.Builder builder = new EasyDialog.Builder(context);
         EasyDialog dialog = builder.setDialogView(R.layout.easydialog_loading_dialog)
@@ -80,9 +83,13 @@ public class DialogUtil {
                 .setBuildChildListener(new IDialog.OnBuildListener() {
                     @Override
                     public void onBuildChildView(IDialog dialog, View view, int layoutRes) {
-                        LoadingTextView txt_msg = view.findViewById(R.id.tv_msg);
-                        //默认文字(努力加载中...)
-                        txt_msg.startAnim();
+                        TextView tv_msg = view.findViewById(R.id.tv_msg);
+                        //默认文字(加载中...)
+                        if (!TextUtils.isEmpty(txt)) {
+                            tv_msg.setText(txt);
+                        }
+                        LoadingTextView tv_loading = view.findViewById(R.id.tv_loading);
+                        tv_loading.startAnim();
                     }
                 })
                 .setCancelableOutSide(false)
@@ -105,6 +112,5 @@ public class DialogUtil {
             hashMap.remove(dialogKey);
             dialog.dismiss();
         }
-
     }
 }

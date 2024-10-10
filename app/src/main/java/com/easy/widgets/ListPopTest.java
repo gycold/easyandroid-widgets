@@ -7,6 +7,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 
+import com.easyandroid.widgets.dialog.dialog.DialogUtil;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +25,7 @@ public class ListPopTest extends AppCompatActivity {
     private EditText mEditText;
     private ListPopupWindow mListPop;
     private List<String> lists = new ArrayList<String>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,5 +54,7 @@ public class ListPopTest extends AppCompatActivity {
                 mListPop.show();
             }
         });
+
+        DialogUtil.createLoadingDialog(this, null);
     }
 }

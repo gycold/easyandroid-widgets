@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_gravity="center"
     android:gravity="center"
     android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/ll_content"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="170dp"
         android:background="@drawable/easydialog_loading_bg"
-        android:gravity="center"
         android:orientation="vertical"
         android:padding="15dp">
 
@@ -24,17 +25,31 @@
             android:layout_gravity="center_horizontal"
             tools:visibility="visible" />
 
-        <com.easyandroid.widgets.textview.LoadingTextView
-            android:id="@+id/tv_msg"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="13dp"
-            android:layout_marginTop="22dp"
-            android:gravity="left"
             android:layout_gravity="center_horizontal"
-            android:text="努力加载中"
-            android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:id="@+id/tv_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="加载中"
+                android:textColor="@color/white"
+                android:textSize="16sp"/>
+
+            <com.easyandroid.widgets.textview.LoadingTextView
+                android:id="@+id/tv_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tv_msg"
+                android:text="..."
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
     </LinearLayout>
 
 </LinearLayout>

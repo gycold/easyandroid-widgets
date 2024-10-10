@@ -16,7 +16,7 @@ import androidx.appcompat.widget.AppCompatTextView;
  */
 public class LoadingTextView extends AppCompatTextView {
 
-    private String showText = "努力加载中";
+    private String showText = "";
     private int number;
     private StringBuilder builder = new StringBuilder();
 
